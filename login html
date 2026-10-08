@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Lamp Login Form</title>
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="lamp-container" id="lamp" onclick="toggleLight()">
+            <div class="lamp-head"></div>
+            <div class="lamp-stick"></div>
+            <div class="lamp-cord">
+                <div class="lamp-ball"></div>
+            </div>
+            <div class="light-beam"></div>
+        </div>
+
+        
+        <div class="login-card" id="loginForm">
+            <h2>Welcome</h2>
+            <form onsubmit="checkLogin(event)">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter name" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                </div>
+                <button type="submit" class="btn-signin">Sign In</button>
+            </form>
+            <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #ccc;">
+    Don't have an account? <a href="register.html" style="color: #f39c12; text-decoration: none;">Sign Up</a>
+            </p>
+            <a href="index.html" style="display:block; text-align:center; margin-top:15px; color:#aaa; text-decoration:none; font-size:14px;">← Back to Home</a>
+        </div>
+    </div>
+
+    <script src="login-script.js"></script>
+</body>
+</html>
