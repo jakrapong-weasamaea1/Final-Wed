@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    background-color: #121417;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.6s ease;
+}
+
+
+body.active {
+    background-color: #1c1f24;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+
+.lamp-container {
+    position: relative;
+    width: 120px;
+    height: 180px;
+    cursor: pointer;
+}
+
+.lamp-head {
+    width: 100px;
+    height: 50px;
+    background: #e6e6e6;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    z-index: 2;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+body.active .lamp-head {
+    background: #ffffff;
+    box-shadow: 0 0 30px #ffffff, 0 0 60px #fff7c2;
+}
+
+.lamp-stick {
+    width: 8px;
+    height: 100px;
+    background: #e6e6e6;
+    position: absolute;
+    top: 50px;
+    left: 56px;
+}
+
+
+.lamp-cord {
+    width: 2px;
+    height: 45px;
+    background: #aaa;
+    position: absolute;
+    top: 50px;
+    left: 80px;
+    transition: transform 0.2s;
+}
+
+.lamp-ball {
+    width: 10px;
+    height: 10px;
+    background: #d4a359;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -5px;
+    left: -4px;
+}
+
+.lamp-container:active .lamp-cord {
+    transform: translateY(10px); 
+}
+
+
+.login-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px 40px;
+    border-radius: 16px;
+    width: 320px;
+    opacity: 0.15; 
+    transform: scale(0.95);
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+
+body.active .login-card {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.login-card h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    color: #aaa;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: #fff;
+    outline: none;
+}
+
+.btn-signin {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #d4a359, #f7d08a);
+    border: none;
+    border-radius: 6px;
+    color: #121417;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-signin:hover {
+    opacity: 0.9;
+}
+
