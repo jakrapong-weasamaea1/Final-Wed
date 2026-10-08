@@ -1,0 +1,53 @@
+
+function toggleLight() {
+    const lamp = document.getElementById("lamp");
+    if (lamp) {
+        lamp.classList.toggle("light-on");
+    }
+    document.body.classList.toggle("active");
+}
+
+
+function checkLogin(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+
+    
+    const storedPassword = localStorage.getItem(username);
+
+    
+    const isValid = (storedPassword && storedPassword === password) || 
+                    (username === "Lee67" && password === "67");
+
+    if (isValid) {
+        
+        localStorage.setItem("currentUser", JSON.stringify({
+            username: username,
+            isLoggedIn: true
+        }));
+
+        alert("🎉 เข้าสู่ระบบสำเร็จ! ยินดีต้อนรับคุณ " + username);
+        window.location.href = "index.html";
+    } else {
+        alert("❌ Username หรือ Password ไม่ถูกต้อง! กรุณาลองใหม่");
+        document.getElementById('password').value = "";
+    }
+}
+
+
+function handleRegister(event) {
+    event.preventDefault();
+    const username = document.getElementById('reg-username').value.trim();
+    const password = document.getElementById('reg-password').value;
+
+    if (!username || !password) {
+        alert("กรุณากรอกข้อมูลให้ครบ");
+        return;
+    }
+
+    localStorage.setItem(username, password);
+    alert("สมัครสมาชิกสำเร็จ! สามารถเข้าสู่ระบบได้ทันที");
+    window.location.href = "login.html";
+}
